@@ -1,4 +1,5 @@
 # giroapp
-display ionosphere metrics from girotick. Docker based on tiangolo uwsgi-nginx-flask-docker.
+display latest ionosphere metrics for each station from girotick as datatable and render to .json for other stuff . Docker based on tiangolo uwsgi-nginx-flask-docker.
 
-online at http://metrics.af7ti.com/
+online at http://metrics.af7ti.com/ . http://metrics.af7ti.com/stations.json for raw data.
+
