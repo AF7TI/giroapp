@@ -19,8 +19,8 @@
       <table id="stations" class="display compact nowrap row-border" cellspacing="0" style="width:100%">
         <thead>
             <tr>
-                <th>Time</th>
-                <th>Station</th>
+                <th data-priority="1">Station</th>
+                <th data-priority="2">Time</th>
                 <th>MUFD</th>
                 <th>TEC</th>
                 <th>foF2</th>
@@ -67,14 +67,14 @@ $(document).ready(function() {
 	//"scrollY":        "400px",
         //"scrollCollapse": true,
 	"columns": [
-            { "data": "time" },
             { "data": "station.name" },
+            { "data": "time" },
             { "data": "mufd" },
             { "data": "tec" },
             { "data": "fof2" },
             { "data": "fof1" },
             { "data": "foe" },
-	           { "data": "hmf2" },
+	    { "data": "hmf2" },
             { "data": "hf2" },
             { "data": "yf2" },
             { "data": "hmf1" },
