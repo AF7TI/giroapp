@@ -122,6 +122,8 @@ def stationsjson():
 
     qry = (db.session.query(Measurement).join(subq, and_(Measurement.id == subq.c.max_id)))
 
+    db.session.close()
+    
     result = measurements_schema.dump(qry)
 
     return jsonify(result.data)
