@@ -3,3 +3,5 @@ display latest ionosphere metrics for each station from girotick as datatable an
 
 online at http://metrics.af7ti.com/ . http://metrics.af7ti.com/stations.json for raw data.
 
+frontend for https://github.com/AF7TI/girotick
+
