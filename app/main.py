@@ -88,32 +88,6 @@ measurements_schema = MeasurementSchema(many=True)
 
 #You can now use your schema to dump and load your ORM objects.
 
-
-class RegionSchema(ma.ModelSchema):
-    class Meta:
-        model = Region
-
-region_schema = RegionSchema()
-regions_schema = RegionSchema(many=True)
-
-class StationSchema(ma.ModelSchema):
-    class Meta:
-        model = Station # Fields to expose
-    region = ma.Nested(RegionSchema)
-
-station_schema = StationSchema()
-stations_schema = StationSchema(many=True)
-
-class MeasurementSchema(ma.ModelSchema):
-    class Meta:
-        model = Measurement
-    station = fields.Nested('StationSchema', only=['region', 'name', 'id', 'code', 'longitude', 'latitude',  'region_id'])
-
-measurement_schema = MeasurementSchema()
-measurements_schema = MeasurementSchema(many=True)
-
-#You can now use your schema to dump and load your ORM objects.
-
 #Returns latest measurements for all stations in JSON
 @app.route("/stations.json" , methods=['GET'])
 def stationsjson():
