@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from marshmallow import Schema, fields
@@ -7,6 +8,7 @@ from sqlalchemy import and_
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:yourpassword@yourhostname:5432/yourdb'
+CORS(app)
 
 # Order matters: Initialize SQLAlchemy before Marshmallow
 db = SQLAlchemy(app)
