@@ -4,6 +4,8 @@ frontend for https://github.com/AF7TI/girotick. display latest ionosphere metric
 
 point app to your db via app.config['SQLALCHEMY_DATABASE_URI'] in [main.py](app/main.py)
 
+configure nginx options in [nginx.conf](app/nginx.conf)
+
 online at http://metrics.af7ti.com. http://metrics.af7ti.com/stations.json for raw data.
 
 
