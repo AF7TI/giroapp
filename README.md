@@ -1,11 +1,17 @@
 # giroapp
 
-frontend for https://github.com/AF7TI/girotick. display latest ionosphere metrics for each station as datatable and render to .json for other stuff . Docker based on tiangolo uwsgi-nginx-flask-docker.
+Frontend for https://github.com/AF7TI/girotick. Display latest ionosphere metrics for each station as datatable and render to .json for other stuff like [contour maps](https://github.com/AF7TI/giroviz). Docker based on tiangolo uwsgi-nginx-flask-docker.
 
-point app to your db via app.config['SQLALCHEMY_DATABASE_URI'] in [main.py](app/main.py)
+## Installation
+Run the official postgres Docker image then build this image from Dockerfile, tag with giroapp   
+    `docker build -t giroapp .`
 
-configure nginx options in [nginx.conf](app/nginx.conf)
+## Configuration
+Pass database connection info through environment variables:  
+    `docker run -e "DB_USER=postgres" -e "DB_HOST=localhost" -e "DB_NAME=postgres" -e "DB_PASSWORD=mysecretpassword" -d -p 80:80 giroapp`
+    
+Optionally, configure nginx in [nginx.conf](app/nginx.conf)
 
-online at http://metrics.af7ti.com. http://metrics.af7ti.com/stations.json for raw data.
-
-
+## Running Code
+- Tabular data online at https://prop.kc2g.com/stations and http://metrics.af7ti.com
+- JSON data sources online at https://prop.kc2g.com/stations.json and http://metrics.af7ti.com/stations.json
