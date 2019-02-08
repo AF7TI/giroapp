@@ -5,9 +5,10 @@ from flask_marshmallow import Marshmallow
 from marshmallow import Schema, fields
 import json
 from sqlalchemy import and_
+import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:yourpassword@yourhostname:5432/yourdb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://%s:%s@%s:5432/%s' % (os.getenv("DB_USER"),os.getenv("DB_PASSWORD"),os.getenv("DB_HOST"),os.getenv("DB_NAME"))
 CORS(app)
 
 # Order matters: Initialize SQLAlchemy before Marshmallow
@@ -99,7 +100,7 @@ def stationsjson():
     qry = (db.session.query(Measurement).join(subq, and_(Measurement.id == subq.c.max_id)))
 
     db.session.close()
-    
+
     result = measurements_schema.dump(qry)
 
     return jsonify(result.data)
