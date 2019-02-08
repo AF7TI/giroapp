@@ -1,6 +1,6 @@
 # giroapp
 
-Frontend for https://github.com/AF7TI/girotick. Display latest ionosphere metrics for each station as datatable and render to .json for other stuff like [contour maps](https://github.com/AF7TI/giroviz). Docker based on tiangolo uwsgi-nginx-flask-docker.
+Frontend for https://github.com/AF7TI/girotick. Display latest ionosphere metrics in a datatable and render to .json for other stuff like [contour maps](https://github.com/AF7TI/giroviz). Docker based on tiangolo uwsgi-nginx-flask-docker.
 
 ## Installation
 Run the official postgres Docker image then build this image from Dockerfile, tag with giroapp   
