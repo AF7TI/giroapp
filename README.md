@@ -1,4 +1,5 @@
 # giroapp
+No longer maintained see [giroapi](https://github.com/AF7TI/giroapi)
 
 Frontend for https://github.com/AF7TI/girotick. Display latest ionosphere metrics in a datatable and render to .json for other stuff like [contour maps](https://github.com/AF7TI/giroviz). Docker based on tiangolo uwsgi-nginx-flask-docker.
 
